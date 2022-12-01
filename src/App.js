@@ -9,12 +9,11 @@ function App() {
   return (
     <Router>  
       <div className="App">
-        <Header />
         <Routes>
           
-          <Route path='/checkout' element={[<Checkout />]} />
+          <Route path='/checkout' element={[<Header />,<Checkout />]} />
           <Route path='/login' element={[<Login />]}/>
-          <Route path='/' element={[<Home />]} />
+          <Route path='/' element={[<Header />,<Home />]} />
         
         </Routes>
       </div>
