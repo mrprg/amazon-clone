@@ -5,7 +5,14 @@ import '../styles/Login.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  const signIn = e => {
+    e.preventDefault();
+  }
 
+  const register = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className='login'>
       <Link to='/'>
@@ -27,13 +34,13 @@ function Login() {
           <input type='password' value={password} onChange=
           {e => setPassword(e.target.value)} />
 
-          <button className='login__signInButton'>Sign in</button>
+          <button type='submit' className='login__signInButton' onClick={signIn}>Sign in</button>
         </form>
         <p>
           By signing-in you agree to AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our interest-based Ads Notice.
         </p>
 
-        <button className='login__registerButton'>Create your Amazon Acount</button>
+        <button onClick={register} className='login__registerButton'>Create your Amazon Acount</button>
       </div>
 
     </div>
