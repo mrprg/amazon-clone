@@ -22,7 +22,7 @@ function Login() {
           <h5>Password</h5>
           <input type='password' />
 
-          <button>Sign in</button>
+          <button className='login__signInButton'>Sign in</button>
         </form>
         <p>
           By signing-in you agree to AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our interest-based Ads Notice.
