@@ -19,6 +19,9 @@ function Login() {
         .then((auth) => {
           console.log(auth)
         })
+        .catch(error => alert(error.message)) 
+
+        
   }
   return (
     <div className='login'>
