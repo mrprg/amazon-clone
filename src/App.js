@@ -4,18 +4,27 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Login from './components/Login';
-import { auth } from "./firebase/firebase"
+import { auth } from "./firebase/firebase";
+import { useStateValue } from './context/Stateprovider';
 
 function App() {
-
+  const [{}, dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
       console.log('the user is >>>', authUser)
 
       if (authUser) {
         // the user just logged in / hte user was logged in
+        dispatch ({
+          type: 'SET_USER',
+          user: authUser
+        })
       } else {
           // the user is logged out 
+        dispatch ({
+          type:'SET_USER',
+          user: null
+        })
       }
     })
   }, [])
