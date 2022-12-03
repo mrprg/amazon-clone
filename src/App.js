@@ -4,12 +4,20 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Login from './components/Login';
-
+import { auth } from "./firebase/firebase"
 
 function App() {
 
   useEffect(() => {
+    auth.onAuthStateChanged(authUser => {
+      console.log('the user is >>>', authUser)
 
+      if (authUser) {
+        // the user just logged in / hte user was logged in
+      } else {
+          // the user is logged out 
+      }
+    })
   }, [])
 
   return (
