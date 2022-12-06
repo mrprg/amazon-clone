@@ -19,3 +19,14 @@
     margin-bottom: -150px;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+@media (max-width:540px) {
+    .home__image {
+        display: none;
+    }
+
+    .home__row {
+    
+       flex-wrap: wrap;
+    }
+}
